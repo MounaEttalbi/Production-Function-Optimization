@@ -1,0 +1,55 @@
+body {
+    background-image: url(/static/img/bg1.jpg); 
+    background-size:cover;
+    background-position:initial;
+    color: #000000;
+}
+
+h1 {
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin-left: 260px;
+    margin-top: 80px;
+    padding: 80px;
+    background-color: rgba(255, 255, 255, 0.893); /* Couleur de fond semi-transparente pour améliorer la lisibilité */
+    box-shadow: 0 0 10px rgba(250, 246, 246, 0.39);
+    border-radius: 8px;
+    color: #000000;
+    text-align: center;  
+}
+
+.stats-table {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #09a5c0;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #5cfa64;
+}
+
+.alert-info {
+    background-color: #39ee39;
+    border: none;
+    color: #ffffff;
+}
+
+.alert-info a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.form-control-file{
+    color: rgb(0, 0, 0);
+    text-size-adjust:  20px;
+}

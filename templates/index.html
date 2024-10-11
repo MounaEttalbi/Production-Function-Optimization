@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiProd</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        
+    </style>
+    <!-- Autres balises head... -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="animate__animated animate__bounceIn">Optimisation de la fonction de production</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">
+                    <i class="fas fa-file-upload"></i> Téléchargement d'un fichier CSV :
+                </label>
+                <input type="file" name="file" id="file" class="form-control-file" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-upload"></i> <b>Télécharger CSV</b>
+            </button>
+        </form>
+        {% if message %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+        {% if stats %}
+            <h2 class="mt-4">Statistiques</h2>
+            <div class="stats-table table-responsive">
+                {{ stats|safe }}
+            </div>
+        {% endif %}
+        {% if results %}
+            <h2 class="mt-4">Résultats de l'Optimisation</h2>
+            <ul>
+                <li><strong>Valeur Optimisée :</strong> {{ results.valeur_optimisee }} unités produites</li>
+                <li><strong>Temps de Travail :</strong> {{ results.temps_de_travail }} minutes</li>
+                <li><strong>Coût total de production :</strong> {{ results.matiere_premiere_a }} USD</li>
+                <li><strong>Temps total d'arrêt des machines :</strong> {{ results.matiere_premiere_b }} minutes d'arrêt</li>
+            </ul>
+        {% endif %}
+        {% if graph %}
+            <h2 class="mt-4">Graphique de Production</h2>
+            <div class="mb-4">
+                {{ graph|safe }}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Ajoutez ici votre code jQuery pour les fonctionnalités interactives
+    </script>
+</body>
+</html>
